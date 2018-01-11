@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import $ from 'jquery';
+import Alert from './components/Alert';
+import Button from './components/Button';
+
+import { Modal, ModalHeader, ModalBody, ModalFooter } from './components/Modal';
 
 class App extends Component {
 
@@ -12,48 +14,29 @@ class App extends Component {
   }
 
   showModal() {
-    $(this.refs.modal).modal('show');
+    this.refs.modal.show();
   }
 
   render() {
     
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-        <div className="alert alert-primary" role="alert" onClick={this.showModal} >
-          This is a primary alert—check it out!
-        </div>
 
+        <Alert type="primary" onClick={this.showModal}>This is a primary alert—check it out!</Alert>
+        <Alert type="success">This is a primary alert—check it out!</Alert>
 
-        <button type="button" className="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+        <Button type="primary" dataToggle="modal" dataTarget="#exampleModal">
           Launch demo modal
-        </button>
+        </Button>
 
-        <div ref="modal" className="modal fade" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div className="modal-dialog" role="document">
-            <div className="modal-content">
-              <div className="modal-header">
-                <h5 className="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" className="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div className="modal-body">
-                ...
-              </div>
-              <div className="modal-footer">
-                <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" className="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Modal ref="modal" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <ModalHeader title="Modal title" />
+          <ModalBody> ... </ModalBody>
+          <ModalFooter>
+            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" className="btn btn-primary">Save changes</button>
+          </ModalFooter>
+        </Modal>
 
       </div>
     );
