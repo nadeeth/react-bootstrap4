@@ -22,19 +22,24 @@ class App extends Component {
     return (
       <div className="App">
 
-        <Alert type="primary" onClick={this.showModal}>This is a primary alert—check it out!</Alert>
-        <Alert type="success">This is a primary alert—check it out!</Alert>
+        <Alert classes="alert-primary" onClick={this.showModal}>This is a primary alert—check it out!</Alert>
+        <Alert classes="alert-success">This is a primary alert—check it out!</Alert>
 
-        <Button type="primary" dataToggle="modal" dataTarget="#exampleModal">
+        <Button classes="btn-primary" dataToggle="modal" dataTarget="#exampleModal">
           Launch demo modal
         </Button>
 
         <Modal ref="modal" id="exampleModal" tabIndex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <ModalHeader title="Modal title" />
+          <ModalHeader>
+            <h5 className="modal-title" id="exampleModalLabel">Modal Title</h5>
+            <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+          </ModalHeader>
           <ModalBody> ... </ModalBody>
           <ModalFooter>
-            <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" className="btn btn-primary">Save changes</button>
+            <Button classes="btn-secondary" dataDismiss="modal">Close</Button>
+            <Button classes="btn-primary">Save changes</Button>
           </ModalFooter>
         </Modal>
 
