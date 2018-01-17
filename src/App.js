@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import Alert from './components/Alert';
-import Button from './components/Button';
+import Alert from './bootstrap_components/Alert';
+import Button from './bootstrap_components/Button';
 
-import { Modal, ModalHeader, ModalBody, ModalFooter } from './components/Modal';
+import { Modal, ModalHeader, ModalBody, ModalFooter } from './bootstrap_components/Modal';
 
 class App extends Component {
 
