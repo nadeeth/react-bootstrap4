@@ -1,4 +1,9 @@
 import React, { Component } from 'react';
+
+//Import bootstrap JS and CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap';
+
 import './App.css';
 
 import Alert from './bootstrap_components/Alert';
